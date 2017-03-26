@@ -1,0 +1,83 @@
+<?php
+
+/**
+ * 发送post请求
+ * @param string $url 请求地址
+ * @param array $post_data post键值对数据
+ * @return string
+ */
+function send_post($url, $post_data) {
+
+	$postdata = http_build_query($post_data);
+	$options = array(
+		'http' => array(
+			'method' => 'POST',
+			'header' => 'Content-type:application/x-www-form-urlencoded',
+			'content' => $postdata,
+			'timeout' => 15 * 60 // 超时时间（单位:s）
+		)
+	);
+	$context = stream_context_create($options);
+	$result = file_get_contents($url, false, $context);
+
+	return $result;
+}
+
+//use Symfony\Component\HttpFoundation\Request;
+function connectToDB(){
+  echo "testDB";
+ // Connect to CloudSQL from App Engine.
+  $dsn = getenv('MYSQL_DSN');
+  $user = getenv('MYSQL_USER');
+  $password = getenv('MYSQL_PASSWORD');
+  if (!isset($dsn, $user) || false === $password) {
+      throw new Exception('Set MYSQL_DSN, MYSQL_USER, and MYSQL_PASSWORD environment variables');
+  }
+
+  $db = new PDO($dsn, $user, $password);
+  //$db = new mysqli("unix_socket=/cloudsql/ottawaparkingbackend:ottawaparkingdatabase",$user,$password,"testDB");
+  //echo $dsn;
+  //echo $user;
+  echo "connecting to database";
+  return $db;
+ };
+
+
+    echo 'Hello world@@@@@@@@####################!';
+  try{
+    /*
+    $db = connectToDB();
+    //echo $db;
+    //$db->exec('create table user(id int primary key not null,
+     // name varchar(20) not null
+     // )');
+    //$db->exec('create table test(id int);');
+    //$db->exec('insert into user (id, name) values("6", "username6")');
+    //$stm = $db->prepare('insert into user(id, name) values(:id, :name)');
+    $stm = $db->prepare('select * from user where id > :id');
+    $stm->execute(array(':id'=>2));
+    print_r($stm->errorInfo());
+    $result = $stm->fetchAll(PDO::FETCH_ASSOC);
+    print_r($result);
+    echo "<br>";
+    while($row = $stm->fetch(PDO::FETCH_ASSOC)){
+     print_r($row);
+    }
+
+
+    $db = null;*/
+    //$url = "http://en.parkopedia.ca/parking/%E6%B8%A5%E5%A4%AA%E5%8D%8E_%E5%AE%89%E5%A4%A7%E7%95%A5%E7%9C%81_k1n_6k3_%E5%8A%A0%E6%8B%BF%E5%A4%A7/?ac=1&country=CA&lat=45.4293956&lng=-75.67879340000002&ampl_devid=3c7bd7bd-454d-4472-8d67-22eeb51b672c";//"http://api.parkwhiz.com/search/?lat=41.8857256&lng=-87.6369590&key=c6899cafdccafe39e45befe59a42d81f";
+    //$json = file_get_contents($url);
+    $post_data = array(
+      "lic" => 134,
+      "mode" => "Regular",
+      "daily_monthly" => "daily",
+		"arr" => "22/06/16 6:20 PM",
+		"dep" => "22/06/16 9:20 PM",
+    );
+    $json = send_post("http://www.bestparking.com/ottawa-parking/garage_info",$post_data);
+    echo $json;
+
+  }catch(PDOException $e){
+    echo "Error!:".$e->getMessage()."<br/>";
+  }

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController" customModule="OttawaParking" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="gIM-TU-37I" id="OVw-Vb-HoZ"/>
+                <outlet property="activityIndicatorForPlace" destination="wBe-vH-Fpq" id="zQF-Ph-wxX"/>
+                <outlet property="searchBar" destination="2ai-MJ-sxU" id="vhG-5c-syr"/>
+                <outlet property="toolBar" destination="zvV-bh-wiy" id="zM3-V3-896"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar alpha="0.84999999999999998" contentMode="redraw" searchBarStyle="prominent" placeholder="Please input a place" translatesAutoresizingMaskIntoConstraints="NO" id="2ai-MJ-sxU">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="M9U-BK-aoF"/>
+                    </constraints>
+                    <textInputTraits key="textInputTraits"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="M9U-BK-aoF"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="M9U-BK-aoF"/>
+                        </mask>
+                    </variation>
+                </searchBar>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvV-bh-wiy">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="qGd-9S-Uqc"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem width="5" style="plain" systemItem="fixedSpace" id="LsE-Zp-lfq"/>
+                        <barButtonItem image="toolbarimage_locating" style="plain" id="bgh-sR-aiO">
+                            <connections>
+                                <action selector="locating" destination="-1" id="yMn-Ot-TMD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="2sd-u9-2oB"/>
+                        <barButtonItem image="toolbarimage_list" style="plain" id="R4V-Vg-mnu">
+                            <connections>
+                                <action selector="listing" destination="-1" id="nVr-hA-cPP"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="6EQ-zC-B0x"/>
+                        <barButtonItem image="toolbarimage_legends" style="plain" id="72V-0Z-6gQ">
+                            <connections>
+                                <action selector="explainLegends" destination="-1" id="Wsy-Ht-f3P"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="GHY-J8-145"/>
+                        <barButtonItem image="toolbarimage_settings" style="plain" id="KC0-Fp-szB">
+                            <connections>
+                                <action selector="settings" destination="-1" id="9Y8-8F-VZd"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="5" style="plain" systemItem="fixedSpace" id="H2m-Cv-mPs"/>
+                    </items>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="qGd-9S-Uqc"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="qGd-9S-Uqc"/>
+                        </mask>
+                    </variation>
+                </toolbar>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="gIM-TU-37I">
+                    <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="PCV-K8-ZPw"/>
+                        <constraint firstAttribute="width" constant="20" id="w73-t2-Lf5"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="PCV-K8-ZPw"/>
+                            <exclude reference="w73-t2-Lf5"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="PCV-K8-ZPw"/>
+                            <include reference="w73-t2-Lf5"/>
+                        </mask>
+                    </variation>
+                </activityIndicatorView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="wBe-vH-Fpq">
+                    <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="0WB-LI-V3J"/>
+                        <constraint firstAttribute="width" constant="20" id="nVR-Kf-RJa"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="0WB-LI-V3J"/>
+                            <exclude reference="nVR-Kf-RJa"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="0WB-LI-V3J"/>
+                            <include reference="nVR-Kf-RJa"/>
+                        </mask>
+                    </variation>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="wBe-vH-Fpq" firstAttribute="top" secondItem="2ai-MJ-sxU" secondAttribute="bottom" constant="47" id="0hA-78-wxO">
+                    <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                </constraint>
+                <constraint firstItem="gIM-TU-37I" firstAttribute="top" secondItem="2ai-MJ-sxU" secondAttribute="bottom" id="8lL-8Y-JKh"/>
+                <constraint firstItem="2ai-MJ-sxU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="22" id="DV9-NH-160"/>
+                <constraint firstAttribute="trailing" secondItem="zvV-bh-wiy" secondAttribute="trailing" id="H7d-W7-6zm"/>
+                <constraint firstItem="zvV-bh-wiy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="JGb-8d-Ofc"/>
+                <constraint firstAttribute="trailing" secondItem="gIM-TU-37I" secondAttribute="trailing" constant="8" id="LHs-Fe-jo8"/>
+                <constraint firstItem="gIM-TU-37I" firstAttribute="leading" secondItem="2ai-MJ-sxU" secondAttribute="trailing" constant="-28" id="RNs-MF-3iP">
+                    <variation key="heightClass=regular-widthClass=compact" constant="-28"/>
+                </constraint>
+                <constraint firstAttribute="trailing" secondItem="2ai-MJ-sxU" secondAttribute="trailing" id="SOS-uo-86c"/>
+                <constraint firstItem="2ai-MJ-sxU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YEq-F9-XTc"/>
+                <constraint firstItem="gIM-TU-37I" firstAttribute="top" secondItem="2ai-MJ-sxU" secondAttribute="bottom" id="feL-np-Evs"/>
+                <constraint firstAttribute="bottom" secondItem="zvV-bh-wiy" secondAttribute="bottom" constant="19" id="ivm-fC-F56">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="gIM-TU-37I" firstAttribute="top" secondItem="2ai-MJ-sxU" secondAttribute="bottom" id="loI-Wx-Qnp"/>
+                <constraint firstItem="2ai-MJ-sxU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="18" id="o3p-D3-B0h"/>
+                <constraint firstAttribute="trailing" secondItem="wBe-vH-Fpq" secondAttribute="trailing" constant="23" id="sUb-ch-RTL">
+                    <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                </constraint>
+                <constraint firstItem="gIM-TU-37I" firstAttribute="top" secondItem="2ai-MJ-sxU" secondAttribute="bottom" constant="70" id="tTF-P8-7AM">
+                    <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                </constraint>
+                <constraint firstItem="gIM-TU-37I" firstAttribute="leading" secondItem="2ai-MJ-sxU" secondAttribute="trailing" constant="-28" id="y54-FB-d9T"/>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="2ai-MJ-sxU"/>
+                    <exclude reference="zvV-bh-wiy"/>
+                    <exclude reference="gIM-TU-37I"/>
+                    <exclude reference="wBe-vH-Fpq"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="8lL-8Y-JKh"/>
+                    <exclude reference="LHs-Fe-jo8"/>
+                    <exclude reference="RNs-MF-3iP"/>
+                    <exclude reference="feL-np-Evs"/>
+                    <exclude reference="loI-Wx-Qnp"/>
+                    <exclude reference="tTF-P8-7AM"/>
+                    <exclude reference="y54-FB-d9T"/>
+                    <exclude reference="0hA-78-wxO"/>
+                    <exclude reference="sUb-ch-RTL"/>
+                    <exclude reference="DV9-NH-160"/>
+                    <exclude reference="SOS-uo-86c"/>
+                    <exclude reference="YEq-F9-XTc"/>
+                    <exclude reference="o3p-D3-B0h"/>
+                    <exclude reference="H7d-W7-6zm"/>
+                    <exclude reference="JGb-8d-Ofc"/>
+                    <exclude reference="ivm-fC-F56"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="2ai-MJ-sxU"/>
+                    <include reference="zvV-bh-wiy"/>
+                    <include reference="gIM-TU-37I"/>
+                    <include reference="wBe-vH-Fpq"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="8lL-8Y-JKh"/>
+                    <include reference="LHs-Fe-jo8"/>
+                    <exclude reference="RNs-MF-3iP"/>
+                    <exclude reference="feL-np-Evs"/>
+                    <exclude reference="loI-Wx-Qnp"/>
+                    <include reference="tTF-P8-7AM"/>
+                    <exclude reference="y54-FB-d9T"/>
+                    <include reference="0hA-78-wxO"/>
+                    <include reference="sUb-ch-RTL"/>
+                    <exclude reference="DV9-NH-160"/>
+                    <include reference="SOS-uo-86c"/>
+                    <include reference="YEq-F9-XTc"/>
+                    <include reference="o3p-D3-B0h"/>
+                    <include reference="H7d-W7-6zm"/>
+                    <include reference="JGb-8d-Ofc"/>
+                    <include reference="ivm-fC-F56"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="toolbarimage_legends" width="48" height="48"/>
+        <image name="toolbarimage_list" width="48" height="28"/>
+        <image name="toolbarimage_locating" width="48" height="48"/>
+        <image name="toolbarimage_settings" width="48" height="48"/>
+    </resources>
+</document>

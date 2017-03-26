@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ManageRecPlacesViewController" customModule="OttawaParking" customModuleProvider="target">
+            <connections>
+                <outlet property="recordedPlacesTableView" destination="tMx-3e-8Wm" id="6N2-rL-kfE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tMx-3e-8Wm">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="tMx-3e-8Wm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="35" id="OBt-yM-X5X">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstAttribute="bottom" secondItem="tMx-3e-8Wm" secondAttribute="bottom" constant="672" id="Ugg-eK-8Mc">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="tMx-3e-8Wm" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="13" id="Vjo-Bw-MCy">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+                <constraint firstAttribute="trailing" secondItem="tMx-3e-8Wm" secondAttribute="trailing" constant="41" id="san-Rr-qoz">
+                    <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                </constraint>
+            </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="tMx-3e-8Wm"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="OBt-yM-X5X"/>
+                    <exclude reference="Ugg-eK-8Mc"/>
+                    <exclude reference="Vjo-Bw-MCy"/>
+                    <exclude reference="san-Rr-qoz"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="tMx-3e-8Wm"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="OBt-yM-X5X"/>
+                    <include reference="Ugg-eK-8Mc"/>
+                    <include reference="Vjo-Bw-MCy"/>
+                    <include reference="san-Rr-qoz"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>

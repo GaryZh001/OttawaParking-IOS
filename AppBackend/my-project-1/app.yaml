@@ -1,0 +1,20 @@
+application: ottawaparkingbackend
+version: 1
+runtime: php55
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /parkinglocation
+  script: parkinglocation.php
+
+- url: /parkinglotdetails
+  script: parkinglotdetails.php
+  
+env_variables:
+  # Replace project, instance, database, user and password with the values obtained
+  # when configuring your Cloud SQL instance.
+  MYSQL_DSN: mysql:unix_socket=/cloudsql/ottawaparkingbackend:ottawaparkingdatabase;dbname=parking
+  #MYSQL_DSN: mysql:host=127.0.0.1;port=3306;dbname=parking;
+  MYSQL_USER: root
+  MYSQL_PASSWORD: ''
